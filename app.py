@@ -7,15 +7,15 @@ main_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), "image
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('./index.html')
 
 @app.route('/app.py', methods=['POST'])
 def download():
     name = request.form['name']
     limit = int(request.form['limit'])
     P = pi()
-    P.download(name, limit=limit, directory=main_directory)
-    return 'Images downloaded successfully!'
+    P.download(name, limit=limit)
+    return render_template('./output.html')
 
 if __name__ == '__main__':
     app.debug = True

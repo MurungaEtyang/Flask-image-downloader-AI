@@ -3,8 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+          background-color: #fff;
+          color: #636b6f;
+          font-family: 'Nunito', sans-serif;
+          font-weight: 200;
+        }
+        h1 {
+          font-size: 40px;
+          text-align: center;
+          color: #1b9bff;
+          padding: 10px 10px;
+        }
+        input {
+          display: block;
+          margin: 0 auto;
+          padding: 10px 10px;
+          border: 1px solid #1b9bff;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #1b9bff;
+        }
+        label {
+          display: block;
+          margin: 0 auto;
+          padding: 10px 10px;
+          font-size: 30px;
+          color: #1b9bff;
+          text-align: center;
+        }
+        button {
+          display: block;
+          margin: 0 auto;
+          padding: 10px 10px;
+          border: 1px solid #1b9bff;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #1b9bff;
+
+        }
+    </style>
 </head>
 <body>
-<h1>Images downloaded successfully! Check the directory: Downloads/images</h1>
+<form action="http://localhost:5000/app.py" method="POST">
+    <h1>Images downloaded successfully! Check the directory: Downloads/images</h1>
+    <button type="submit">download again</button>
+</form>
 </body>
 </html>

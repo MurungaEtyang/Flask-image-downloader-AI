@@ -54,7 +54,7 @@ class ImageDownloadder:
             print(e)
             exit(0)
 
-    def download(self, keywords, limit, progress, directory='', extensions={'.jpg', '.png', '.ico', '.gif', '.jpeg'}):
+    def download(self, keywords, limit, directory='', extensions={'.jpg', '.png', '.ico', '.gif', '.jpeg'}):
         """
         download images from google images
         :param keywords:
@@ -131,5 +131,5 @@ class ImageDownloadder:
             i += 1
         bar.finish()
 
-if __name__ == '__main__':
-    ImageDownloadder().download('cat', 10)
+# if __name__ == '__main__':
+#     ImageDownloadder().download('cat', 10)
