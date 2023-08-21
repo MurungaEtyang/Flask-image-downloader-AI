@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Image Downloader</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <style>
-        h1 {
-        font-size: 20px;
-        text-align: center;
-        color: #1b9bff;
-        padding: 10px 10px;
+        body {
+          background-color: #fff;
+          color: #636b6f;
+          font-family: 'Nunito', sans-serif;
+          font-weight: 200;
         }
-
+        h1 {
+          font-size: 40px;
+          text-align: center;
+          color: #1b9bff;
+          padding: 10px 10px;
+        }
         input {
-        display: block;
-        margin: 0 auto;
-        padding: 10px 10px;
-        border: 1px solid #1b9bff;
-        border-radius: 5px;
-        font-size: 16px;
-        color: #1b9bff;
-
+          display: block;
+          margin: 0 auto;
+          padding: 10px 10px;
+          border: 1px solid #1b9bff;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #1b9bff;
         }
         label {
-        display: block;
-        margin: 0 auto;
-        padding: 10px 10px;
-        font-size: 30px;
-        color: #1b9bff;
-        text-align: center;
+          display: block;
+          margin: 0 auto;
+          padding: 10px 10px;
+          font-size: 30px;
+          color: #1b9bff;
+          text-align: center;
+        }
+        button {
+          display: block;
+          margin: 0 auto;
+          padding: 10px 10px;
+          border: 1px solid #1b9bff;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #1b9bff;
 
         }
     </style>
 </head>
-    <body>
-        <h1>Image Downloader</h1>
-            <form action="/app.py" method="POST">
-                <label for="name">Search Term:</label>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="limit">Number of Images:</label>
-                <input type="number" id="limit" name="limit" required><br><br>
-                <input type="submit" value="Download Images">
-            </form>
-    </body>
+<body>
+<form action="/app.py" method="post">
+    <h1>Image Downloader</h1>
+    <label for="name">Enter the name of the image:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="limit">Enter the limit:</label>
+    <input type="number" id="limit" name="limit" required>
+    <button type="submit">Download</button>
+</form>
+</body>
 </html>
