@@ -6,7 +6,7 @@ import magic
 import progressbar
 from urllib.parse import quote
 
-class ImageDownloadder:
+class ImageDownloader:
     __directory = os.path.expanduser('~') + "/Downloads/images/"
     def __init__(self):
         pass

@@ -12,13 +12,11 @@ main_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), "image
 # Create a thread-local storage for the SQLite connection
 thread_local = threading.local()
 
-
 def get_db():
     # Get the SQLite connection for the current thread
     if not hasattr(thread_local, 'connection'):
         thread_local.connection = sqlite3.connect('database.db')
     return thread_local.connection
-
 
 def get_cursor():
     # Get the SQLite cursor for the current thread
@@ -26,7 +24,6 @@ def get_cursor():
     if not hasattr(thread_local, 'cursor'):
         thread_local.cursor = db.cursor()
     return thread_local.cursor
-
 
 # Create a connection to the SQLite database
 conn = sqlite3.connect('database.db')
@@ -43,7 +40,6 @@ cursor.execute('''
     )
 ''')
 conn.commit()
-
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -101,7 +97,6 @@ def home():
 
     return render_template('home.html', login_error=login_error, register_error=register_error)
 
-
 @app.route('/download', methods=['GET', 'POST'])
 def download():
     if 'user_id' not in session:
@@ -118,7 +113,6 @@ def download():
             return "Invalid form data. Please provide a 'name' field."
 
     return render_template('index.html')
-
 
 if __name__ == '__main__':
     app.debug = True
