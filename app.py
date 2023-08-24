@@ -59,10 +59,10 @@ def home():
             password = request.form['login_password']
 
             if email and password:
-                cursor = get_cursor()
-                cursor.execute('SELECT id, email, password FROM users WHERE email = ? AND password = ?',
+                Cursor = get_cursor()
+                Cursor.execute('SELECT id, email, password FROM users WHERE email = ? AND password = ?',
                                (email, password))
-                result = cursor.fetchone()
+                result = Cursor.fetchone()
 
                 if result:
                     user_id, email_from_db, password_from_db = result
@@ -83,18 +83,18 @@ def home():
             password = request.form['register_password']
 
             if firstname and lastname and email and password:
-                cursor = get_cursor()
-                cursor.execute('SELECT email FROM users WHERE email = ?', (email,))
-                result = cursor.fetchone()
+                Cursor = get_cursor()
+                Cursor.execute('SELECT email FROM users WHERE email = ?', (email,))
+                result = Cursor.fetchone()
                 if result is not None and result[0] == email:
                     register_error = f"This {email} is already used by another user"
                 else:
-                    cursor.execute('''
+                    Cursor.execute('''
                         INSERT INTO users (firstname, lastname, email, password)
                         VALUES (?, ?, ?, ?)
                     ''', (firstname, lastname, email, password))
                     get_db().commit()
-                    session['user_id'] = cursor.lastrowid
+                    session['user_id'] = Cursor.lastrowid
                     return redirect(url_for('download'))
             else:
                 register_error = "All fields are required"
